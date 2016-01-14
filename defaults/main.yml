@@ -1,0 +1,4 @@
+---
+npm_packages:
+  - gulp
+  - grunt-cli

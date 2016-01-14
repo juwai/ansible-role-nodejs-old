@@ -1,0 +1,15 @@
+---
+- name: ensure node and npm present
+  yum:
+    name: "{{ item }}"
+    state: present
+    enablerepo: epel
+  with_items:
+    - nodejs
+    - npm
+
+- name: ensure default npm packages present
+  npm:
+    name: "{{ item }}"
+    global: yes
+  with_items: npm_packages
