@@ -1,4 +1,9 @@
 ---
+- name: enable epl release
+  yum: 
+    name: epel-release
+    state: present
+
 - name: ensure node and npm present
   yum:
     name: "{{ item }}"
