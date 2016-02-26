@@ -1,6 +1,4 @@
 ---
-dependencies: []
-
 galaxy_info:
   author: Juwai Limited
   description:
@@ -14,3 +12,5 @@ galaxy_info:
   - name: Amazon
     versions:
     - 2015.09
+dependencies: []
+
