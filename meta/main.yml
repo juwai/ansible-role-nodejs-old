@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Juwai Limited
-  description:
+  description: Install Node.js and npm on CentOS servers
   company: Juwai Limited
   license: MIT / BSD
   min_ansible_version: 1.9
@@ -12,5 +12,6 @@ galaxy_info:
   - name: Amazon
     versions:
     - 2015.09
+  galaxy_tags: ['juwai', 'nodejs']
 dependencies: []
 
