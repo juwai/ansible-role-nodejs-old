@@ -11,7 +11,8 @@ galaxy_info:
     - 6
   - name: Amazon
     versions:
-    - 2015.09
-  galaxy_tags: ['juwai', 'nodejs']
+    - 2013.03
+    - 2013.09
+  galaxy_tags: ['juwai', 'node', 'nodejs', 'npm']
 dependencies: []
 
