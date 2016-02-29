@@ -21,9 +21,9 @@
 
 - name: Set explicit versions of node and npm
   command:
-    name: "/usr/lib/node_modules/npm cache clean -f"
+    name: "/usr/bin/npm cache clean -f"
   command: 
-    name: "/usr/lib/node_modules/npm install -g n"
+    name: "/usr/bin/npm install -g n"
   command:
     name: "/usr/bin/n {{ __node_version }}"
   command:
