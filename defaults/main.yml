@@ -2,3 +2,6 @@
 npm_packages:
   - gulp
   - grunt-cli
+
+__node_version: "5.6.0"
+__npm_version: "2.5.1"
