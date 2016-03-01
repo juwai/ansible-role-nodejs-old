@@ -19,16 +19,28 @@
     global: yes
   with_items: npm_packages
 
-- name: Set explicit versions of node and npm
-  command:
-    name: "/usr/bin/npm cache clean -f"
-  command: 
-    name: "/usr/bin/npm install -g n"
-  command:
-    name: "/usr/bin/n {{ __node_version }}"
-  command:
-    name: "/bin/ln -sf /usr/local/n/versions/node/{{ __node_version }}/bin/node /usr/local/bin/node"
-  command:
-    name: "/usr/lib/node_modules/npm install -g npm@{{ __npm_version }}"
-  command:
-    name: "/bin/ln -sf /usr/local/n/versions/node/{{ __node_version }}/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm"
+- name: Clear and clean npm cache
+  shell: "npm cache clean -f"
+
+- name: Install n to manage versions of node
+  shell: "npm install -g n"
+
+- name: Use n to install newer node
+  shell: "n {{ __node_version }}"
+
+- name: Use npm to install new version of npm
+  shell: "npm install -g npm@{{ __npm_version }}"
+
+- name: Create alternatives link for npm
+  file:
+    dest: /usr/local/bin/npm
+    src: /usr/local/n/versions/node/{{ __node_version }}/lib/node_modules/npm/bin/npm-cli.js
+    state: link
+
+- name: Create alternatives link for node
+  file:
+    dest: /usr/local/bin/node
+    src: /usr/local/n/versions/node/{{ __node_version }}/bin/node
+    state: link
+
+
