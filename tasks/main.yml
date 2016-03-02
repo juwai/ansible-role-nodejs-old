@@ -36,11 +36,13 @@
     dest: /usr/local/bin/npm
     src: /usr/local/n/versions/node/{{ __node_version }}/lib/node_modules/npm/bin/npm-cli.js
     state: link
+    force: true
 
 - name: Create alternatives link for node
   file:
     dest: /usr/local/bin/node
     src: /usr/local/n/versions/node/{{ __node_version }}/bin/node
     state: link
+    force: true
 
 
