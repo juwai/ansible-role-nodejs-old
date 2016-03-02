@@ -34,7 +34,7 @@
 - name: Create alternatives link for npm
   file:
     dest: /usr/local/bin/npm
-    src: /usr/local/n/versions/node/{{ __node_version }}/lib/node_modules/npm/bin/npm-cli.js
+    src: /usr/lib/node_modules/npm/bin/npm-cli.js
     state: link
     force: true
 
